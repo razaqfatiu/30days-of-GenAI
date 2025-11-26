@@ -1,0 +1,76 @@
+name: Daily Content Release (from private staging)
+
+on:
+  schedule:
+    - cron: '0 9 * * *'  # 09:00 UTC daily; adjust as needed
+  workflow_dispatch:
+    inputs:
+      overrideDay:
+        description: 'Release a specific day number (e.g. 7)'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PUBLIC repo
+        uses: actions/checkout@v4
+
+      - name: Checkout PRIVATE staging repo
+        uses: actions/checkout@v4
+        with:
+          repository: razaqfatiu/30days-staging     # <-- your private repo
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}  # PAT with read access
+          path: staging
+
+      - name: Determine next day
+        id: next
+        run: |
+          if [ -n "${{ github.event.inputs.overrideDay }}" ]; then
+            DAY="${{ github.event.inputs.overrideDay }}"
+          elif [ -f ".release_state.json" ]; then
+            DAY=$(jq -r '.next' .release_state.json)
+          else
+            DAY=2
+          fi
+          printf -v DAY_PAD "%02d" "$DAY"
+          CANDIDATE=$(ls -d staging/scheduled/day${DAY_PAD}_* 2>/dev/null | head -n1 || true)
+          echo "day=${DAY}" >> $GITHUB_OUTPUT
+          echo "day_pad=${DAY_PAD}" >> $GITHUB_OUTPUT
+          echo "candidate=${CANDIDATE}" >> $GITHUB_OUTPUT
+
+      - name: Stop if nothing to release
+        if: steps.next.outputs.candidate == ''
+        run: echo "No scheduled content available for day ${{ steps.next.outputs.day }}"
+
+      - name: Publish day folder
+        if: steps.next.outputs.candidate != ''
+        run: |
+          set -e
+          BASENAME=$(basename "${{ steps.next.outputs.candidate }}")
+          cp -r "${{ steps.next.outputs.candidate }}" "./${BASENAME}"
+
+          NEXT=$(( ${{ steps.next.outputs.day }} + 1 ))
+          jq -n --argjson n "$NEXT" '{next: $n}' > .release_state.json
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ".release_state.json" "${BASENAME}"
+          git commit -m "Auto release: ${BASENAME}"
+          git push
+
+      - name: Optional update README index
+        if: steps.next.outputs.candidate != ''
+        run: |
+          BASENAME=$(basename "${{ steps.next.outputs.candidate }}")
+          if ! grep -q "${BASENAME}" README.md; then
+            echo "" >> README.md
+            echo "- [${BASENAME}](./${BASENAME})" >> README.md
+            git add README.md
+            git commit -m "Index ${BASENAME} in README" || true
+            git push || true
+          fi
