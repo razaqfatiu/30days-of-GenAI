@@ -1,42 +1,42 @@
 # Day 1 — The Shift: Software Engineer → AI Engineer
 
 ## 🧠 What we're doing today
-We contrast **deterministic** code (classic functions) with **probabilistic** behavior (LLM-powered responses).
-This helps build intuition for how AI systems "decide" outputs.
+Contrast **deterministic** code with **probabilistic** (LLM-driven) behavior to build intuition for AI systems.
 
 ## 🛠 Setup Steps
 1. Ensure Node.js (>=18) is installed.
-2. Initialize a project and install TypeScript and ts-node:
+3. Install deps and configure env:
    ```bash
-   npm init -y
-   npm install -D typescript ts-node @types/node
-   npx tsc --init
+   npm install
+   cp .env.sample .env   # add your OPENAI_API_KEY
    ```
-3. (Optional, for framework example) Install LangChain and the OpenAI SDK:
-   ```bash
-   npm install langchain openai
-   ```
-4. Copy `.env.sample` to `.env` and set `OPENAI_API_KEY` if you plan to run the framework example.
 
 ## ▶️ Run the examples
 - **Vanilla TS (no external API):**
   ```bash
-  npx ts-node day1_transition/code.ts
+  npm run dev:day1:vanilla
   ```
 - **Framework (LangChain + OpenAI):**
   ```bash
-  # Requires OPENAI_API_KEY in .env
-  npx ts-node day1_transition/framework.ts
+  npm run dev:day1:framework
   ```
 
 ## 🤔 Why both vanilla and framework?
-- **Vanilla TypeScript** makes the core ideas transparent. No magic, just code you can follow line-by-line.
-- **Frameworks** (e.g., LangChain) add building blocks (prompt templates, chains, memory, tools) so you can
-  assemble production pipelines faster, with less boilerplate.
+- **Vanilla TypeScript** keeps fundamentals transparent (no magic).
+- **Frameworks** (e.g., LangChain) provide production-ready building blocks (prompt templates, chains, memory, tools).
+
+## 📄 Files
+- `code.ts` — deterministic vs. simulated non-deterministic greeting.
+- `framework.ts` — real LLM inference via LangChain with **updated imports**:
+
+```ts
+import { ChatOpenAI } from "@langchain/openai";
+import { HumanMessage, SystemMessage } from "@langchain/core/messages";
+```
 
 ## 📚 Learn More
-- Generative AI overview (LLMs, tokens, temperature): High-level intuition from reputable blogs and docs.
-- LangChain Concepts: Chains, prompt templates, memory, tools.
-- OpenAI SDK Reference: Usage, models, and parameters.
+- OpenAI Docs: https://platform.openai.com/docs
+- LangChain (JS): https://js.langchain.com/docs/
+- “State of GPT” (Karpathy): https://www.youtube.com/watch?v=bZQun8Y4L2A
 
-> Tip: Skim the comments inside both `code.ts` and `framework.ts` — every line is annotated to clarify what's happening.
+> Tip: Both files are heavily commented line-by-line for clarity.

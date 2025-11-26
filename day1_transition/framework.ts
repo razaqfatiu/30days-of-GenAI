@@ -1,45 +1,35 @@
 // day1_transition/framework.ts
-// Goal: Use a real LLM via a framework (LangChain) to produce variable, context-aware greetings.
-// Run: 
-//   1) Ensure OPENAI_API_KEY is set in your environment (.env)
-//   2) npx ts-node day1_transition/framework.ts
+// Use a real LLM via LangChain to produce a short greeting.
+// Run:
+//   1) cp .env.sample .env && put your OPENAI_API_KEY
+//   2) npm install
+//   3) npm run dev:day1:framework
 
-// Import 'dotenv' to load variables from .env at runtime (optional but convenient)
 import 'dotenv/config';
 
-// Import LangChain's Chat model interface for OpenAI-compatible providers
-import { ChatOpenAI } from "langchain/chat_models/openai";
+// Chat model for OpenAI-compatible providers
+import { ChatOpenAI } from "@langchain/openai";
+// Message primitives live in @langchain/core
+import { HumanMessage, SystemMessage } from "@langchain/core/messages";
 
-// Import message schema types to build a basic prompt
-import { HumanMessage, SystemMessage } from "langchain/schema";
-
-// Create the chat model instance
 const model = new ChatOpenAI({
-  // Choose a model you have access to; replace with your preferred model name
-  modelName: process.env.MODEL_NAME || "gpt-4o-mini",
-  // Temperature controls creativity; higher -> more varied outputs
+  // Pick a model you have access to; change if needed
+  model: process.env.MODEL_NAME || "gpt-4o-mini",
   temperature: 0.8,
-  // Optionally point to a custom base URL if you're using an OpenAI-compatible server
-  // configuration: { baseURL: process.env.OPENAI_BASE_URL }
+  // If you use an OpenAI-compatible endpoint, set baseURL:
+  // baseURL: process.env.OPENAI_BASE_URL
 });
 
-// A simple function that asks the model to greet a user in context
 async function aiGreetUser(name: string) {
-  // We create a lightweight prompt using a system message (behavior) + human message (task)
   const messages = [
     new SystemMessage("You are a friendly assistant that writes short, warm greetings."),
     new HumanMessage(`Greet ${name} in 1 sentence. Add a tiny dose of positivity.`)
   ];
 
-  // Invoke the model with our messages; LangChain handles the API call & formatting
   const res = await model.invoke(messages);
-
-  // The textual content of the model's response
   console.log(res.content);
 }
 
-// Execute only when run directly: node/ts-node day1_transition/framework.ts
 aiGreetUser("Ada").catch((err) => {
-  // Helpful error output if API key is missing or network fails
   console.error("Failed to generate greeting:", err);
 });
