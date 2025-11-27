@@ -2,7 +2,7 @@ name: Daily Content Release (from private staging)
 
 on:
   schedule:
-    - cron: '0 9 * * *'  # 09:00 UTC daily; adjust as needed
+    - cron: '0 9 * * *'  # 09:00 UTC daily
   workflow_dispatch:
     inputs:
       overrideDay:
@@ -24,12 +24,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: razaqfatiu/30days-staging     # <-- your private repo
-          token: ${{ secrets.PRIVATE_REPO_TOKEN }}  # PAT with read access
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}  # PAT with repo:read
           path: staging
 
       - name: Determine next day
         id: next
+        shell: bash
         run: |
+          set -euo pipefail
           if [ -n "${{ github.event.inputs.overrideDay }}" ]; then
             DAY="${{ github.event.inputs.overrideDay }}"
           elif [ -f ".release_state.json" ]; then
@@ -49,25 +51,103 @@ jobs:
 
       - name: Publish day folder
         if: steps.next.outputs.candidate != ''
+        id: publish
+        shell: bash
         run: |
-          set -e
-          BASENAME=$(basename "${{ steps.next.outputs.candidate }}")
-          cp -r "${{ steps.next.outputs.candidate }}" "./${BASENAME}"
+          set -euo pipefail
+          SRC="${{ steps.next.outputs.candidate }}"
+          BASENAME=$(basename "$SRC")
+          cp -r "$SRC" "./$BASENAME"
+          echo "basename=$BASENAME" >> $GITHUB_OUTPUT
 
-          NEXT=$(( ${{ steps.next.outputs.day }} + 1 ))
-          jq -n --argjson n "$NEXT" '{next: $n}' > .release_state.json
+          # bump pointer only if not overriding
+          if [ -z "${{ github.event.inputs.overrideDay }}" ]; then
+            NEXT=$(( ${{ steps.next.outputs.day }} + 1 ))
+            jq -n --argjson n "$NEXT" '{next: $n}' > .release_state.json
+            git add .release_state.json
+          fi
 
+          git add "$BASENAME"
+
+      - name: Merge package.json from staging
+        if: steps.next.outputs.candidate != ''
+        id: mergepkg
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Paths
+          PUB_PKG="package.json"
+          STG_PKG="staging/package.json"
+          BASENAME="${{ steps.publish.outputs.basename }}"
+          DAY="${{ steps.next.outputs.day }}"
+
+          # Ensure a public package.json exists
+          if [ ! -f "$PUB_PKG" ]; then
+            echo '{}' > "$PUB_PKG"
+          fi
+
+          # Load JSON (fall back to {} if staging file missing)
+          if [ -f "$STG_PKG" ]; then
+            STAGING_JSON=$(cat "$STG_PKG")
+          else
+            STAGING_JSON='{}'
+          fi
+
+          # Build dynamic scripts for this day
+          VANILLA_SCRIPT="npx tsx ${BASENAME}/code.ts"
+          FRAMEWORK_SCRIPT="npx tsx ${BASENAME}/framework.ts"
+          DAY_VARNAME="dev:day${DAY}:vanilla"
+          DAY_FWKNAME="dev:day${DAY}:framework"
+
+          # jq merge:
+          # - Create scripts object if missing
+          # - Merge deps/devDeps (staging overrides versions if same key)
+          # - Add the two day-specific scripts
+          # - Ensure tsx is present in devDependencies
+          jq \
+            --argjson STG "$STAGING_JSON" \
+            --arg VAN "$VANILLA_SCRIPT" \
+            --arg FWK "$FRAMEWORK_SCRIPT" \
+            --arg DSV "$DAY_VARNAME" \
+            --arg DSF "$DAY_FWKNAME" \
+            '
+            . as $pub
+            | ($pub.scripts // {}) as $ps
+            | ($pub.dependencies // {}) as $pd
+            | ($pub.devDependencies // {}) as $pdd
+            | ($STG.dependencies // {}) as $sd
+            | ($STG.devDependencies // {}) as $sdd
+            | ($STG.scripts // {}) as $ss
+            | {
+                # Keep existing, merge in staging
+                dependencies: ($pd + $sd),
+                devDependencies: ($pdd + $sdd),
+                scripts: ($ps + $ss)
+              }
+            | $pub + .
+            | .scripts[$DSV] = $VAN
+            | .scripts[$DSF] = $FWK
+            | .devDependencies.tsx = (.devDependencies.tsx // "^4.7.0")
+            ' "$PUB_PKG" > package.merged.json
+
+          mv package.merged.json package.json
+          git add package.json
+
+      - name: Commit and push
+        shell: bash
+        run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add ".release_state.json" "${BASENAME}"
-          git commit -m "Auto release: ${BASENAME}"
+          git commit -m "Auto release: ${{ steps.publish.outputs.basename }} + package.json updates" || echo "No changes to commit"
           git push
 
       - name: Optional update README index
         if: steps.next.outputs.candidate != ''
+        shell: bash
         run: |
-          BASENAME=$(basename "${{ steps.next.outputs.candidate }}")
-          if ! grep -q "${BASENAME}" README.md; then
+          BASENAME="${{ steps.publish.outputs.basename }}"
+          if ! grep -q "${BASENAME}" README.md 2>/dev/null; then
             echo "" >> README.md
             echo "- [${BASENAME}](./${BASENAME})" >> README.md
             git add README.md
