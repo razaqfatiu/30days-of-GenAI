@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev:day1:vanilla": "ts-node day1_transition/code.ts",
-    "dev:day1:framework": "ts-node day1_transition/framework.ts"
+    "dev:day1:framework": "ts-node day1_transition/framework.ts",
+    "dev:day2:vanilla": "npx tsx day02_ai_ecosystem/code.ts",
+    "dev:day2:framework": "npx tsx day02_ai_ecosystem/framework.ts"
   },
   "dependencies": {
     "@langchain/core": "^0.2.0",
@@ -17,6 +19,7 @@
   "devDependencies": {
     "@types/node": "^20.11.30",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "tsx": "^4.20.6"
   }
 }
