@@ -4,10 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev:day1:vanilla": "ts-node day1_transition/code.ts",
-    "dev:day1:framework": "ts-node day1_transition/framework.ts",
-    "dev:day2:vanilla": "npx tsx day02_ai_ecosystem/code.ts",
-    "dev:day2:framework": "npx tsx day02_ai_ecosystem/framework.ts"
+    "dev:day1:vanilla": "tsx day1_transition/code.ts",
+    "dev:day1:framework": "tsx day1_transition/framework.ts",
+    "dev:day2:vanilla": "tsx day02_ai_ecosystem/code.ts",
+    "dev:day2:framework": "tsx day02_ai_ecosystem/framework.ts"
   },
   "dependencies": {
     "@langchain/core": "^0.2.0",
