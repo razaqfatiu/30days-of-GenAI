@@ -6,8 +6,12 @@
   "scripts": {
     "dev:day1:vanilla": "tsx day1_transition/code.ts",
     "dev:day1:framework": "tsx day1_transition/framework.ts",
-    "dev:day2:vanilla": "tsx day02_ai_ecosystem/code.ts",
-    "dev:day2:framework": "tsx day02_ai_ecosystem/framework.ts"
+    "dev:day2:vanilla": "tsx scheduled/day02_ai_ecosystem/code.ts",
+    "dev:day2:framework": "tsx scheduled/day02_ai_ecosystem/framework.ts",
+    "dev:day3:vanilla": "npx tsx day03_llm_mind/code.ts",
+    "dev:day3:framework": "npx tsx day03_llm_mind/framework.ts",
+    "dev:day4:vanilla": "tsx day04_prompt_engineering/code.ts",
+    "dev:day4:framework": "tsx day04_prompt_engineering/framework.ts"
   },
   "dependencies": {
     "@langchain/core": "^0.2.0",
