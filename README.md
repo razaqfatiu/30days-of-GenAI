@@ -87,3 +87,5 @@ OPENAI_API_KEY=your_openai_api_key_here
 Follow the series on **LinkedIn** and ⭐ the repo for updates.
 
 - [day02_ai_ecosystem](./day02_ai_ecosystem)
+
+- [day03_llm_mind](./day03_llm_mind)
