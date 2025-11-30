@@ -10,10 +10,10 @@
     "dev:day2:framework": "tsx scheduled/day02_ai_ecosystem/framework.ts",
     "dev:day3:vanilla": "tsx day03_llm_mind/code.ts",
     "dev:day3:framework": "tsx day03_llm_mind/framework.ts",
-    "dev:day4:vanilla": "npx tsx day04_prompt_engineering/code.ts",
-    "dev:day4:framework": "npx tsx day04_prompt_engineering/framework.ts",
-    "dev:day5:vanilla": "tsx day05_inferencing/code.ts",
-    "dev:day5:framework": "tsx day05_inferencing/framework.ts"
+    "dev:day4:vanilla": "tsx day04_prompt_engineering/code.ts",
+    "dev:day4:framework": "tsx day04_prompt_engineering/framework.ts",
+    "dev:day5:vanilla": "npx tsx day05_inferencing/code.ts",
+    "dev:day5:framework": "npx tsx day05_inferencing/framework.ts"
   },
   "dependencies": {
     "@langchain/core": "^1.1.0",
