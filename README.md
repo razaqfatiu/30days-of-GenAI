@@ -91,3 +91,5 @@ Follow the series on **LinkedIn** and ⭐ the repo for updates.
 - [day03_llm_mind](./day03_llm_mind)
 
 - [day04_prompt_engineering](./day04_prompt_engineering)
+
+- [day05_inferencing](./day05_inferencing)
