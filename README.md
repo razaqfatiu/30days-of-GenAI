@@ -93,3 +93,5 @@ Follow the series on **LinkedIn** and ⭐ the repo for updates.
 - [day04_prompt_engineering](./day04_prompt_engineering)
 
 - [day05_inferencing](./day05_inferencing)
+
+- [day06_embeddings](./day06_embeddings)
