@@ -14,10 +14,10 @@
     "dev:day4:framework": "tsx day04_prompt_engineering/framework.ts",
     "dev:day5:vanilla": "tsx day05_inferencing/code.ts",
     "dev:day5:framework": "tsx day05_inferencing/framework.ts",
-    "dev:day6:vanilla": "npx tsx day06_embeddings/code.ts",
-    "dev:day6:framework": "npx tsx day06_embeddings/framework.ts",
-    "dev:day7:vanilla": "tsx day07_chunking/code.ts",
-    "dev:day7:framework": "tsx day07_chunking/framework.ts"
+    "dev:day6:vanilla": "tsx day06_embeddings/code.ts",
+    "dev:day6:framework": "tsx day06_embeddings/framework.ts",
+    "dev:day7:vanilla": "npx tsx day07_chunking/code.ts",
+    "dev:day7:framework": "npx tsx day07_chunking/framework.ts"
   },
   "dependencies": {
     "@langchain/core": "^1.1.0",

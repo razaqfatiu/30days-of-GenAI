@@ -1,0 +1,31 @@
+# Getting Started with RAG
+
+Retrieval-Augmented Generation (RAG) is a pattern where we combine a language model with an external knowledge source. 
+Instead of asking the model to "remember" everything, we let it retrieve relevant information and then generate an answer using that context.
+
+For example, imagine building a "chat with your documentation" feature. 
+When a user asks a question, you first search through your docs, pick the most relevant passages, and then feed those into the model as additional context.
+
+## Why Chunking Matters
+
+Most documentation files are long. 
+If you try to embed an entire PDF or markdown file as a single piece of text, the embedding will be blurry and less useful.
+Instead, we break the document into smaller, meaningful pieces called chunks.
+
+Good chunks:
+- are not too long, not too short
+- stay on a single topic
+- can stand on their own when retrieved
+
+Poor chunking leads to poor retrieval, which leads to bad answers, no matter how good your model is.
+
+## From Raw Text to Chunks
+
+A typical pipeline looks like this:
+1. Load raw text (from files, APIs, databases).
+2. Normalize and clean the text.
+3. Split the text into chunks with some overlap.
+4. Attach metadata (source, section, page, etc.) to each chunk.
+5. Generate embeddings for those chunks and store them in a vector database.
+
+In the next stages, queries will be embedded and compared to these chunk embeddings to find the most relevant pieces of information.
