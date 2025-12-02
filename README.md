@@ -95,3 +95,5 @@ Follow the series on **LinkedIn** and ⭐ the repo for updates.
 - [day05_inferencing](./day05_inferencing)
 
 - [day06_embeddings](./day06_embeddings)
+
+- [day07_chunking](./day07_chunking)
