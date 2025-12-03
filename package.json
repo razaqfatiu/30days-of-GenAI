@@ -16,8 +16,10 @@
     "dev:day5:framework": "tsx day05_inferencing/framework.ts",
     "dev:day6:vanilla": "tsx day06_embeddings/code.ts",
     "dev:day6:framework": "tsx day06_embeddings/framework.ts",
-    "dev:day7:vanilla": "npx tsx day07_chunking/code.ts",
-    "dev:day7:framework": "npx tsx day07_chunking/framework.ts"
+    "dev:day7:vanilla": "tsx day07_chunking/code.ts",
+    "dev:day7:framework": "tsx day07_chunking/framework.ts",
+    "dev:day8:vanilla": "npx tsx day08_vector_db/code.ts",
+    "dev:day8:framework": "npx tsx day08_vector_db/framework.ts"
   },
   "dependencies": {
     "@langchain/core": "^1.1.0",
@@ -25,7 +27,11 @@
     "dotenv": "^16.4.5",
     "openai": "^4.56.0",
     "zod": "^3.23.8",
-    "@langchain/anthropic": "^1.1.3"
+    "@langchain/anthropic": "^1.1.3",
+    "@langchain/community": "^1.0.6",
+    "@langchain/pinecone": "^1.0.1",
+    "@pinecone-database/pinecone": "^5.1.2",
+    "weaviate-ts-client": "^2.2.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.30",
