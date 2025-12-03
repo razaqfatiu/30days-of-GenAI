@@ -97,3 +97,5 @@ Follow the series on **LinkedIn** and ⭐ the repo for updates.
 - [day06_embeddings](./day06_embeddings)
 
 - [day07_chunking](./day07_chunking)
+
+- [day08_vector_db](./day08_vector_db)
