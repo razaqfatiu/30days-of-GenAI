@@ -99,3 +99,5 @@ Follow the series on **LinkedIn** and ⭐ the repo for updates.
 - [day07_chunking](./day07_chunking)
 
 - [day08_vector_db](./day08_vector_db)
+
+- [day09_ingestion_pipeline](./day09_ingestion_pipeline)
