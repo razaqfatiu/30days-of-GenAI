@@ -18,8 +18,12 @@
     "dev:day6:framework": "tsx day06_embeddings/framework.ts",
     "dev:day7:vanilla": "tsx day07_chunking/code.ts",
     "dev:day7:framework": "tsx day07_chunking/framework.ts",
-    "dev:day8:vanilla": "npx tsx day08_vector_db/code.ts",
-    "dev:day8:framework": "npx tsx day08_vector_db/framework.ts"
+    "dev:day8:vanilla": "tsx day08_vector_db/code.ts",
+    "dev:day8:framework": "tsx day08_vector_db/framework.ts",
+    "dev:day9:vanilla": "npx tsx day09_ingestion_pipeline/code.ts",
+    "dev:day9:framework": "npx tsx day09_ingestion_pipeline/framework.ts",
+    "dev:day10:vanilla": "tsx day10_similarity_search/code.ts",
+    "dev:day10:framework": "tsx day10_similarity_search/framework.ts"
   },
   "dependencies": {
     "@langchain/core": "^1.1.0",
