@@ -101,3 +101,5 @@ Follow the series on **LinkedIn** and ⭐ the repo for updates.
 - [day08_vector_db](./day08_vector_db)
 
 - [day09_ingestion_pipeline](./day09_ingestion_pipeline)
+
+- [day10_similarity_search](./day10_similarity_search)
