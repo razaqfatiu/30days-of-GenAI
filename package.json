@@ -22,8 +22,10 @@
     "dev:day8:framework": "tsx day08_vector_db/framework.ts",
     "dev:day9:vanilla": "tsx day09_ingestion_pipeline/code.ts",
     "dev:day9:framework": "tsx day09_ingestion_pipeline/framework.ts",
-    "dev:day10:vanilla": "npx tsx day10_similarity_search/code.ts",
-    "dev:day10:framework": "npx tsx day10_similarity_search/framework.ts"
+    "dev:day10:vanilla": "tsx day10_similarity_search/code.ts",
+    "dev:day10:framework": "tsx day10_similarity_search/framework.ts",
+    "dev:day11:vanilla": "npx tsx day11_rag_pipeline/code.ts",
+    "dev:day11:framework": "npx tsx day11_rag_pipeline/framework.ts"
   },
   "dependencies": {
     "@langchain/core": "^1.1.0",
