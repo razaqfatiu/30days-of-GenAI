@@ -103,3 +103,5 @@ Follow the series on **LinkedIn** and ⭐ the repo for updates.
 - [day09_ingestion_pipeline](./day09_ingestion_pipeline)
 
 - [day10_similarity_search](./day10_similarity_search)
+
+- [day11_rag_pipeline](./day11_rag_pipeline)
