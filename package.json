@@ -24,8 +24,10 @@
     "dev:day9:framework": "tsx day09_ingestion_pipeline/framework.ts",
     "dev:day10:vanilla": "tsx day10_similarity_search/code.ts",
     "dev:day10:framework": "tsx day10_similarity_search/framework.ts",
-    "dev:day11:vanilla": "npx tsx day11_rag_pipeline/code.ts",
-    "dev:day11:framework": "npx tsx day11_rag_pipeline/framework.ts"
+    "dev:day11:vanilla": "tsx day11_rag_pipeline/code.ts",
+    "dev:day11:framework": "tsx day11_rag_pipeline/framework.ts",
+    "dev:day12:vanilla": "npx tsx day12_evaluation_metrics/code.ts",
+    "dev:day12:framework": "npx tsx day12_evaluation_metrics/framework.ts"
   },
   "dependencies": {
     "@langchain/core": "^1.1.0",
