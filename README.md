@@ -105,3 +105,5 @@ Follow the series on **LinkedIn** and ⭐ the repo for updates.
 - [day10_similarity_search](./day10_similarity_search)
 
 - [day11_rag_pipeline](./day11_rag_pipeline)
+
+- [day12_evaluation_metrics](./day12_evaluation_metrics)
