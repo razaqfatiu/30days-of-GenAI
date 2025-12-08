@@ -107,3 +107,5 @@ Follow the series on **LinkedIn** and ⭐ the repo for updates.
 - [day11_rag_pipeline](./day11_rag_pipeline)
 
 - [day12_evaluation_metrics](./day12_evaluation_metrics)
+
+- [day13_guardrails_safety](./day13_guardrails_safety)
