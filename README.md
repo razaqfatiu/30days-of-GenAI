@@ -109,3 +109,5 @@ Follow the series on **LinkedIn** and ⭐ the repo for updates.
 - [day12_evaluation_metrics](./day12_evaluation_metrics)
 
 - [day13_guardrails_safety](./day13_guardrails_safety)
+
+- [day14_intro_agents](./day14_intro_agents)
