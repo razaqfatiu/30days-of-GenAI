@@ -28,8 +28,10 @@
     "dev:day11:framework": "tsx day11_rag_pipeline/framework.ts",
     "dev:day12:vanilla": "tsx day12_evaluation_metrics/code.ts",
     "dev:day12:framework": "tsx day12_evaluation_metrics/framework.ts",
-    "dev:day13:vanilla": "npx tsx day13_guardrails_safety/code.ts",
-    "dev:day13:framework": "npx tsx day13_guardrails_safety/framework.ts"
+    "dev:day13:vanilla": "tsx day13_guardrails_safety/code.ts",
+    "dev:day13:framework": "tsx day13_guardrails_safety/framework.ts",
+    "dev:day14:vanilla": "npx tsx day14_intro_agents/code.ts",
+    "dev:day14:framework": "npx tsx day14_intro_agents/framework.ts"
   },
   "dependencies": {
     "@langchain/core": "^1.1.0",
