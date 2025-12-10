@@ -30,8 +30,10 @@
     "dev:day12:framework": "tsx day12_evaluation_metrics/framework.ts",
     "dev:day13:vanilla": "tsx day13_guardrails_safety/code.ts",
     "dev:day13:framework": "tsx day13_guardrails_safety/framework.ts",
-    "dev:day14:vanilla": "npx tsx day14_intro_agents/code.ts",
-    "dev:day14:framework": "npx tsx day14_intro_agents/framework.ts"
+    "dev:day14:vanilla": "tsx day14_intro_agents/code.ts",
+    "dev:day14:framework": "tsx day14_intro_agents/framework.ts",
+    "dev:day15:vanilla": "npx tsx day15_structured_tool_calling/code.ts",
+    "dev:day15:framework": "npx tsx day15_structured_tool_calling/framework.ts"
   },
   "dependencies": {
     "@langchain/core": "^1.1.0",
@@ -43,7 +45,8 @@
     "@langchain/community": "^1.0.6",
     "@langchain/pinecone": "^1.0.1",
     "@pinecone-database/pinecone": "^5.1.2",
-    "weaviate-ts-client": "^2.2.0"
+    "weaviate-ts-client": "^2.2.0",
+    "langchain": "^1.1.5"
   },
   "devDependencies": {
     "@types/node": "^20.11.30",
