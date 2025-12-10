@@ -111,3 +111,5 @@ Follow the series on **LinkedIn** and ⭐ the repo for updates.
 - [day13_guardrails_safety](./day13_guardrails_safety)
 
 - [day14_intro_agents](./day14_intro_agents)
+
+- [day15_structured_tool_calling](./day15_structured_tool_calling)
