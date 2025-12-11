@@ -32,10 +32,10 @@
     "dev:day13:framework": "tsx day13_guardrails_safety/framework.ts",
     "dev:day14:vanilla": "tsx day14_intro_agents/code.ts",
     "dev:day14:framework": "tsx day14_intro_agents/framework.ts",
-    "dev:day15:vanilla": "npx tsx day15_structured_tool_calling/code.ts",
-    "dev:day15:framework": "npx tsx day15_structured_tool_calling/framework.ts",
-    "dev:day16:vanilla": "tsx day16_advanced_tool_calling/code.ts",
-    "dev:day16:framework": "tsx day16_advanced_tool_calling/framework.ts"
+    "dev:day15:vanilla": "tsx day15_structured_tool_calling/code.ts",
+    "dev:day15:framework": "tsx day15_structured_tool_calling/framework.ts",
+    "dev:day16:vanilla": "npx tsx day16_advanced_tool_calling/code.ts",
+    "dev:day16:framework": "npx tsx day16_advanced_tool_calling/framework.ts"
   },
   "dependencies": {
     "@langchain/core": "^1.1.0",
