@@ -34,10 +34,10 @@
     "dev:day14:framework": "tsx day14_intro_agents/framework.ts",
     "dev:day15:vanilla": "tsx day15_structured_tool_calling/code.ts",
     "dev:day15:framework": "tsx day15_structured_tool_calling/framework.ts",
-    "dev:day16:vanilla": "npx tsx day16_advanced_tool_calling/code.ts",
-    "dev:day16:framework": "npx tsx day16_advanced_tool_calling/framework.ts",
-    "dev:day17:vanilla": "tsx day17_multi_agent_systems/code.ts",
-    "dev:day17:framework": "tsx day17_multi_agent_systems/framework.ts"
+    "dev:day16:vanilla": "tsx day16_advanced_tool_calling/code.ts",
+    "dev:day16:framework": "tsx day16_advanced_tool_calling/framework.ts",
+    "dev:day17:vanilla": "npx tsx day17_multi_agent_systems/code.ts",
+    "dev:day17:framework": "npx tsx day17_multi_agent_systems/framework.ts"
   },
   "dependencies": {
     "@langchain/core": "^1.1.0",
