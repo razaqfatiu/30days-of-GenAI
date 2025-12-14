@@ -39,7 +39,9 @@
     "dev:day17:vanilla": "tsx day17_multi_agent_systems/code.ts",
     "dev:day17:framework": "tsx day17_multi_agent_systems/framework.ts",
     "dev:day18:vanilla": "npx tsx day18_agent_memory/code.ts",
-    "dev:day18:framework": "npx tsx day18_agent_memory/framework.ts"
+    "dev:day18:framework": "npx tsx day18_agent_memory/framework.ts",
+    "dev:day19:vanilla": "tsx day19_agent_orchestration/code.ts",
+    "dev:day19:framework": "tsx day19_agent_orchestration/framework.ts"
   },
   "dependencies": {
     "@langchain/core": "^1.1.0",
