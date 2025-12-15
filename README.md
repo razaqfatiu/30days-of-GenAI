@@ -121,3 +121,5 @@ Follow the series on **LinkedIn** and ⭐ the repo for updates.
 - [day18_agent_memory](./day18_agent_memory)
 
 - [day19_agent_orchestration](./day19_agent_orchestration)
+
+- [day20_testing_tracing](./day20_testing_tracing)
