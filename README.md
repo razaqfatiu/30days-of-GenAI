@@ -123,3 +123,5 @@ Follow the series on **LinkedIn** and ⭐ the repo for updates.
 - [day19_agent_orchestration](./day19_agent_orchestration)
 
 - [day20_testing_tracing](./day20_testing_tracing)
+
+- [day21_guardrails_safety](./day21_guardrails_safety)
