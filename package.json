@@ -44,8 +44,10 @@
     "dev:day19:framework": "tsx day19_agent_orchestration/framework.ts",
     "dev:day20:vanilla": "tsx day20_testing_tracing/code.ts",
     "dev:day20:framework": "tsx day20_testing_tracing/framework.ts",
-    "dev:day21:vanilla": "npx tsx day21_guardrails_safety/code.ts",
-    "dev:day21:framework": "npx tsx day21_guardrails_safety/framework.ts"
+    "dev:day21:vanilla": "tsx day21_guardrails_safety/code.ts",
+    "dev:day21:framework": "tsx day21_guardrails_safety/framework.ts",
+    "dev:day22:vanilla": "npx tsx day22_deployment_scaling/code.ts",
+    "dev:day22:framework": "npx tsx day22_deployment_scaling/framework.ts"
   },
   "dependencies": {
     "@langchain/core": "^1.1.0",
