@@ -125,3 +125,5 @@ Follow the series on **LinkedIn** and ⭐ the repo for updates.
 - [day20_testing_tracing](./day20_testing_tracing)
 
 - [day21_guardrails_safety](./day21_guardrails_safety)
+
+- [day22_deployment_scaling](./day22_deployment_scaling)
