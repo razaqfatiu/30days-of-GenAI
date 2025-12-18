@@ -127,3 +127,5 @@ Follow the series on **LinkedIn** and ⭐ the repo for updates.
 - [day21_guardrails_safety](./day21_guardrails_safety)
 
 - [day22_deployment_scaling](./day22_deployment_scaling)
+
+- [day23_advanced_rag](./day23_advanced_rag)
