@@ -35,38 +35,38 @@ genai-30-days/
 
 ## 🗓️ 30-Day Breakdown: From Software Engineer → AI Engineer
 
-| Day    | Theme                                       | Focus                                                                                                                |
-| ------ | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| **1**  | **The Transition**                          | From Software Engineer → AI Engineer — why it matters, mindset shift, and roadmap.                                   |
-| **2**  | **The AI Ecosystem**                        | Combine roles: Data Scientist, ML Engineer, AI Engineer + overview of Generative AI, LLMs, and the current AI stack. |
-| **3**  | **Inside the Mind of an LLM**               | Understanding tokens, context windows, parameters, temperature, and latency.                                         |
-| **4**  | **Prompt Engineering 101**                  | Types of prompts — zero-shot, one-shot, few-shot, chain-of-thought, and role-based — when and why to use each.       |
-| **5**  | **Inferencing & Model Behavior**            | What happens when an LLM “thinks”? API requests, context, and cost/performance tradeoffs.                            |
-| **6**  | **Embeddings Explained**                    | Turning words into numbers — semantic meaning in vector space.                                                       |
-| **7**  | **Vector Spaces in Practice**               | Analogy: “Google Maps of Meaning” — distances, cosine similarity, and semantic relationships.                        |
-| **8**  | **Chunking (Merged)**                       | What chunking is, how it works, parameters (chunk size, overlap, preserveSentences), and why it matters.             |
-| **9**  | **Metadata and Context Management**         | How metadata improves search, logging, and debugging in RAG pipelines.                                               |
-| **10** | **Batching and Ingestion Pipelines**        | Efficiently preparing and uploading large data for embeddings and RAG.                                               |
-| **11** | **Vector Databases (Merged)**               | FAISS, Pinecone, Chroma, Weaviate — what they are, differences, and how to use them.                                 |
-| **12** | **RAG Fundamentals**                        | Retrieval-Augmented Generation: concept, benefits, and structure.                                                    |
-| **13** | **RAG Pipeline (Part 1: Data)**             | Preparing and embedding documents with chunking + metadata.                                                          |
-| **14** | **RAG Pipeline (Part 2: Query)**            | Query flow: similarity search → reranking → model response.                                                          |
-| **15** | **Search Algorithms Deep Dive**             | KNN, ANN, and Hybrid search — when to use each and trade-offs.                                                       |
-| **16** | **Latency, Tokens, and Cost Optimization**  | Techniques to manage response time, API costs, and context limits.                                                   |
-| **17** | **Translating Real Problems into AI Tasks** | How to break down business problems into model-friendly workflows.                                                   |
-| **18** | **Pre-Trained Models and APIs**             | Understanding model APIs: keys, rate limits, endpoints, context, and billing.                                        |
-| **19** | **Local vs Cloud Embeddings**               | Comparing self-hosted (e.g., sentence-transformers) vs managed (OpenAI, Cohere).                                     |
-| **20** | **Frameworks for AI Engineering**           | LangChain, LlamaIndex, Dust, and why these frameworks matter.                                                        |
-| **21** | **Building with LangChain**                 | Hands-on: Create a simple chain with prompt + LLM + memory.                                                          |
-| **22** | **Agents — The AI Workers**                 | Agents vs models — analogy, use cases, and internal reasoning.                                                       |
-| **23** | **The ReAct Paradigm**                      | Reason + Act loop — how agents combine logic and tools.                                                              |
-| **24** | **Multi-Agent Collaboration**               | How multiple agents communicate to solve complex tasks.                                                              |
-| **25** | **Orchestration Frameworks**                | LangGraph, AutoGen, CrewAI — managing multi-agent systems.                                                           |
-| **26** | **Evaluation and Testing**                  | Metrics for prompts, responses, hallucinations, and accuracy.                                                        |
-| **27** | **AI Safety and Ethics**                    | Responsible AI, bias, privacy, and model misuse prevention.                                                          |
-| **28** | **Observability and Tracing**               | How to log, trace, and debug AI pipelines (LangFuse, OpenDevin).                                                     |
-| **29** | **Deploying AI Systems**                    | Containerization, scaling, and serving models in production.                                                         |
-| **30** | **Final Project: Build Your Own AI App**    | Combine everything — a mini RAG agent built end-to-end with TypeScript + LangChain.                                  |
+| Day | Theme | Focus |
+|----:|-------|-------|
+| 1 | The Transition | From Software Engineer → AI Engineer — why it matters, mindset shift, and roadmap. |
+| 2 | The AI Ecosystem | Combine roles: Data Scientist, ML Engineer, AI Engineer + overview of Generative AI, LLMs, and the current AI stack. |
+| 3 | Models & LLM Basics | What models are, how LLMs work, parameters, tokens, and context. |
+| 4 | Prompt Engineering | Prompt types, instruction anchoring, choosing the right prompting technique. |
+| 5 | Inferencing & Providers | How inference works, API calls, latency, cost, and multi-provider strategies. |
+| 6 | Embeddings | What embeddings are, how similarity works, and real-world use cases. |
+| 7 | Chunking & Metadata | Chunking strategies (fixed, semantic), metadata, and why they matter. |
+| 8 | Vector Databases | Vector DB concepts, indexing, CRUD, and local vs managed options. |
+| 9 | Ingestion Pipelines | Cleaning, normalization, batching, and upserts for vector data. |
+| 10 | Similarity Search | kNN, ANN, HNSW, IVF, PQ, and hybrid search strategies. |
+| 11 | RAG Fundamentals | Building an end-to-end Retrieval-Augmented Generation pipeline. |
+| 12 | Evaluation & Cost | RAG evaluation metrics, latency breakdown, and cost basics. |
+| 13 | Safety & Guardrails | Prompt injection, moderation, and safety patterns. |
+| 14 | Intro to Agents | Reasoning + acting, tools, and agent fundamentals. |
+| 15 | Structured Tool Calling | Tool schemas, validation, and safe execution. |
+| 16 | Advanced Tool Calling | Chaining tools, parallel calls, routing, and correctness strategies. |
+| 17 | Multi-Agent Systems | Agent teams, roles, messaging, and supervision. |
+| 18 | Agent Memory | Episodic, vector, and task memory with pruning. |
+| 19 | Agent Orchestration | LangGraph, LCEL, DAG-based workflows, branching logic. |
+| 20 | Testing & Tracing | Logging agent steps, tracing, and debugging failures. |
+| 21 | Production Guardrails | Policy enforcement, reliability patterns, and HITL. |
+| 22 | Deployment & Scaling | REST, GraphQL, SQL, third-party APIs, auth, and safety constraints. |
+| 23 | Advanced RAG | Query rewriting, hybrid retrieval, reranking, context assembly. |
+| 24 | Query Planning | Multi-hop RAG and decomposing complex questions. |
+| 25 | Conversation Memory | Long-running context, summaries, and sliding windows. |
+| 26 | Cost Optimization | Caching, batching, token budgeting, and performance tuning. |
+| 27 | Model Routing | Dynamic model selection, fallbacks, and degraded modes. |
+| 28 | AI Security | Data isolation, secrets, and tenant safety. |
+| 29 | System Architecture | End-to-end production AI system design. |
+| 30 | Capstone | Build and ship a production-ready AI agent. |
 
 ---
 
