@@ -131,3 +131,5 @@ Follow the series on **LinkedIn** and ⭐ the repo for updates.
 - [day23_advanced_rag](./day23_advanced_rag)
 
 - [day24_query_planning](./day24_query_planning)
+
+- [day25_conversation_memory](./day25_conversation_memory)
