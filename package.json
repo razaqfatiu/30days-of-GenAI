@@ -48,8 +48,10 @@
     "dev:day21:framework": "tsx day21_guardrails_safety/framework.ts",
     "dev:day22:vanilla": "tsx day22_deployment_scaling/code.ts",
     "dev:day22:framework": "tsx day22_deployment_scaling/framework.ts",
-    "dev:day23:vanilla": "npx tsx day23_advanced_rag/code.ts",
-    "dev:day23:framework": "npx tsx day23_advanced_rag/framework.ts"
+    "dev:day23:vanilla": "tsx day23_advanced_rag/code.ts",
+    "dev:day23:framework": "tsx day23_advanced_rag/framework.ts",
+    "dev:day24:vanilla": "npx tsx day24_query_planning/code.ts",
+    "dev:day24:framework": "npx tsx day24_query_planning/framework.ts"
   },
   "dependencies": {
     "@langchain/core": "^1.1.0",
