@@ -129,3 +129,5 @@ Follow the series on **LinkedIn** and ⭐ the repo for updates.
 - [day22_deployment_scaling](./day22_deployment_scaling)
 
 - [day23_advanced_rag](./day23_advanced_rag)
+
+- [day24_query_planning](./day24_query_planning)
