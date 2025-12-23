@@ -52,8 +52,10 @@
     "dev:day23:framework": "tsx day23_advanced_rag/framework.ts",
     "dev:day24:vanilla": "tsx day24_query_planning/code.ts",
     "dev:day24:framework": "tsx day24_query_planning/framework.ts",
-    "dev:day25:vanilla": "npx tsx day25_conversation_memory/code.ts",
-    "dev:day25:framework": "npx tsx day25_conversation_memory/framework.ts"
+    "dev:day25:vanilla": "tsx day25_conversation_memory/code.ts",
+    "dev:day25:framework": "tsx day25_conversation_memory/framework.ts",
+    "dev:day26:vanilla": "npx tsx day26_cost_performance/code.ts",
+    "dev:day26:framework": "npx tsx day26_cost_performance/framework.ts"
   },
   "dependencies": {
     "@langchain/core": "^1.1.0",
