@@ -135,3 +135,5 @@ Follow the series on **LinkedIn** and ⭐ the repo for updates.
 - [day25_conversation_memory](./day25_conversation_memory)
 
 - [day26_cost_performance](./day26_cost_performance)
+
+- [day27_deployment_scaling](./day27_deployment_scaling)
