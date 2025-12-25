@@ -137,3 +137,5 @@ Follow the series on **LinkedIn** and ⭐ the repo for updates.
 - [day26_cost_performance](./day26_cost_performance)
 
 - [day27_deployment_scaling](./day27_deployment_scaling)
+
+- [day28_production_reliability](./day28_production_reliability)
