@@ -58,8 +58,10 @@
     "dev:day26:framework": "tsx day26_cost_performance/framework.ts",
     "dev:day27:vanilla": "tsx day27_deployment_scaling/code.ts",
     "dev:day27:framework": "tsx day27_deployment_scaling/framework.ts",
-    "dev:day28:vanilla": "npx tsx day28_production_reliability/code.ts",
-    "dev:day28:framework": "npx tsx day28_production_reliability/framework.ts"
+    "dev:day28:vanilla": "tsx day28_production_reliability/code.ts",
+    "dev:day28:framework": "tsx day28_production_reliability/framework.ts",
+    "dev:day29:vanilla": "npx tsx day29_end_to_end_design/code.ts",
+    "dev:day29:framework": "npx tsx day29_end_to_end_design/framework.ts"
   },
   "dependencies": {
     "@langchain/core": "^1.1.0",
