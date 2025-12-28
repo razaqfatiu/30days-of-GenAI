@@ -139,3 +139,5 @@ Follow the series on **LinkedIn** and ⭐ the repo for updates.
 - [day27_deployment_scaling](./day27_deployment_scaling)
 
 - [day28_production_reliability](./day28_production_reliability)
+
+- [day29_end_to_end_design](./day29_end_to_end_design)
