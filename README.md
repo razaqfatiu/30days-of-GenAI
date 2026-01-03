@@ -141,3 +141,5 @@ Follow the series on **LinkedIn** and ⭐ the repo for updates.
 - [day28_production_reliability](./day28_production_reliability)
 
 - [day29_end_to_end_design](./day29_end_to_end_design)
+
+- [day30_ai_engineer_roadmap](./day30_ai_engineer_roadmap)
