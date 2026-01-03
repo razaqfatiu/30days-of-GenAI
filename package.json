@@ -61,7 +61,9 @@
     "dev:day28:vanilla": "tsx day28_production_reliability/code.ts",
     "dev:day28:framework": "tsx day28_production_reliability/framework.ts",
     "dev:day29:vanilla": "npx tsx day29_end_to_end_design/code.ts",
-    "dev:day29:framework": "npx tsx day29_end_to_end_design/framework.ts"
+    "dev:day29:framework": "npx tsx day29_end_to_end_design/framework.ts",
+    "dev:day30:vanilla": "npx tsx day30_ai_engineer_roadmap/code.ts",
+    "dev:day30:framework": "npx tsx day30_ai_engineer_roadmap/framework.ts"
   },
   "dependencies": {
     "@langchain/core": "^1.1.0",
